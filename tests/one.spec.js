@@ -11,7 +11,7 @@ test.use({
 
 test.beforeAll(async () => {
   browser = await chromium.launch({
-    headless: false,
+    headless: true,
     slowMo: 3000,
     args: ["--window-position=400,0"],
   });
