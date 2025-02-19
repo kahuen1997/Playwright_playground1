@@ -10,7 +10,7 @@ let page;
 
 test.beforeAll(async () => {
   browser = await chromium.launch({
-    headless: false,
+    headless: true,
     slowMo: 2000,
     args: ["--window-position=400,0"],
   });
