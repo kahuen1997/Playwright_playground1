@@ -73,7 +73,7 @@ test.skip("Burnaby Page", async () => {
   await page.pause();
 });
 
-test.only("bed chem", async () => {
+test("bed chem", async () => {
   await page.goto("https://www.facebook.com/r.php?locale=zh_TW&display=page");
   await page.waitForURL(
     "https://www.facebook.com/r.php?locale=zh_TW&display=page"
@@ -93,7 +93,7 @@ test.only("bed chem", async () => {
     "a step",
     async () => {
       await page
-        .getByRole("textbox", { name: "手機號碼或電子郵件地址" })
+        .getByRole("textbo", { name: "手機號碼或電子郵件地址" })
         .press("Backspace");
     },
     { timeout: 5000 }
