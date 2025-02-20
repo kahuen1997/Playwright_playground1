@@ -6,7 +6,7 @@ let page;
 
 test.use({
   ...devices["iPhone 8"],
-  timeout: 40000,
+  // timeout: 40000,
 });
 
 test.beforeAll(async () => {
@@ -19,14 +19,14 @@ test.beforeAll(async () => {
   context = await browser.newContext();
   page = await context.newPage();
 
-  context.setDefaultTimeout(10000);
-  context.setDefaultNavigationTimeout(60000);
+  // context.setDefaultTimeout(10000);
+  // context.setDefaultNavigationTimeout(60000);
 
-  page.setDefaultTimeout(50000);
+  // page.setDefaultTimeout(50000);
 });
 
 test("test", async () => {
-  test.setTimeout(120_000);
+  // test.setTimeout(120_000);
   await page.goto("https://www.burnaby.ca/");
   await page.getByRole("textbox", { name: "I am looking for…" }).click();
   await page.getByRole("main").getByRole("button", { name: "Search" }).click();

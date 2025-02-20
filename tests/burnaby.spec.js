@@ -89,15 +89,12 @@ test("bed chem", async () => {
     .getByRole("textbox", { name: "手機號碼或電子郵件地址" })
     .fill("gmail");
 
-  await test.step(
-    "a step",
-    async () => {
-      await page
-        .getByRole("textbo", { name: "手機號碼或電子郵件地址" })
-        .press("Backspace");
-    },
-    { timeout: 5000 }
-  );
+  await test.step("a step", async () => {
+    await page
+      .getByRole("textbo", { name: "手機號碼或電子郵件地址" })
+      .press("Backspace");
+  });
+  // { timeout: 5000 }
 
   await page
     .getByRole("textbox", { name: "手機號碼或電子郵件地址" })
