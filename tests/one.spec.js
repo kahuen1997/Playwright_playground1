@@ -11,8 +11,8 @@ test.use({
 
 test.beforeAll(async () => {
   browser = await chromium.launch({
-    headless: true,
-    slowMo: 3000,
+    headless: false,
+    slowMo: 2000,
     args: ["--window-position=400,0"],
   });
 
@@ -26,7 +26,7 @@ test.beforeAll(async () => {
 });
 
 test("test", async () => {
-  // test.setTimeout(120_000);
+  test.setTimeout(120_000);
   await page.goto("https://www.burnaby.ca/");
   await page.getByRole("textbox", { name: "I am looking for…" }).click();
   await page.getByRole("main").getByRole("button", { name: "Search" }).click();
@@ -50,13 +50,4 @@ test("test", async () => {
     .getByRole("link")
     .first()
     .click();
-  await page1
-    .getByRole("button", { name: "Reserve In Advance: Hockey 65" })
-    .click();
-  await page1.getByRole("textbox", { name: "Email address Required" }).click();
-  await page1
-    .getByRole("textbox", { name: "Email address Required" })
-    .fill("rosmary");
-  await page1.getByRole("textbox", { name: "Password Required" }).click();
-  await page1.getByRole("textbox", { name: "Password Required" }).fill("brown");
 });

@@ -11,7 +11,7 @@ let page;
 test.beforeAll(async () => {
   browser = await chromium.launch({
     headless: true,
-    slowMo: 2000,
+    // slowMo: 2000,
     args: ["--window-position=400,0"],
   });
   context = await browser.newContext();
@@ -91,7 +91,7 @@ test("bed chem", async () => {
 
   await test.step("a step", async () => {
     await page
-      .getByRole("textbo", { name: "手機號碼或電子郵件地址" })
+      .getByRole("textbox", { name: "手機號碼或電子郵件地址" })
       .press("Backspace");
   });
   // { timeout: 5000 }

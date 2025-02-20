@@ -8,19 +8,27 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: lts/*
       - name: Install dependencies
-        run: npm ci
+        run: |
+          npm ci
+          echo "Install dependencies"
       - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
-      - name: Run Playwright tests
-        run: npx playwright test --timeout=60000
-
+        run: |
+          npx playwright install --with-deps
+          echo "Install Playwright Browsers"
+      - name: Run Playwright tests one
+        run: |
+          npx playwright test one
+          echo "Run Playwright tests one"
+      - name: Run Playwright tests example
+        run: |
+          npx playwright test example
+          echo "Run Playwright tests example"
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:

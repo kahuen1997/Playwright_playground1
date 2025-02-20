@@ -76,15 +76,15 @@ export default defineConfig({
   // timeout: 5000,
   // outputDir: "testtesttest",
 
-  expect: {
-    timeout: 3000,
-    toHaveScreenshot: {
-      maxDiffPixelRatio: 10,
-    },
-    toMatchSnapshot: {
-      maxDiffPixelRatio: 0.1,
-    },
-  },
+  // expect: {
+  //   timeout: 3000,
+  //   toHaveScreenshot: {
+  //     maxDiffPixelRatio: 10,
+  //   },
+  //   toMatchSnapshot: {
+  //     maxDiffPixelRatio: 0.1,
+  //   },
+  // },
 
   /* Run your local dev server before starting the tests */
   // webServer: {
