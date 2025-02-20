@@ -73,8 +73,8 @@ export default defineConfig({
   ],
   // testIgnore: "burnaby.spec.js",
   // testMatch: "one.spec.js",
-  timeout: 5000,
-  outputDir: "testtesttest",
+  // timeout: 5000,
+  // outputDir: "testtesttest",
 
   expect: {
     timeout: 3000,
