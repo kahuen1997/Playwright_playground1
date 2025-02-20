@@ -9,10 +9,6 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [16, 18] # 多個 Node.js 版本並行測試
-        shard: [1, 2, 3, 4] #
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
