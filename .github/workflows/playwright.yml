@@ -19,7 +19,7 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run Playwright tests
-        run: npx playwright test -- --timeout=60000
+        run: npx playwright test --timeout=60000
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
