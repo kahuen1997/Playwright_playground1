@@ -9,7 +9,16 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: pre-checkout (For Demostraction)
+        run: |
+          pwd
+          ls -lh # 修正 PowerShell 指令 Get-ChildItem | Format-Table -AutoSize
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: after-checkout (For Demostraction)
+        run: |
+          pwd
+          ls -lh # 修正 PowerShell 指令 Get-ChildItem | Format-Table -AutoSize
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
