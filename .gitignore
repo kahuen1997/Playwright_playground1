@@ -5,3 +5,5 @@ node_modules/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+/tests/use.spec.js
+/.github/workflows/playwright0.yml
